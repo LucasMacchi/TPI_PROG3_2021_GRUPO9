@@ -66,7 +66,12 @@ namespace TPI_PROG_3_LUCAS_MACCHI
         {
             FileInfo info = new FileInfo(ventana.Temporal_path);
             string s = info.DirectoryName+"\\" + textBox1.Text;
-            label2.Text = s;
+
+        }
+
+        private void Change_name_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

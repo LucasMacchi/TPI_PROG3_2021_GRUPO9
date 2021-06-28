@@ -50,13 +50,13 @@ namespace TPI_PROG_3_LUCAS_MACCHI
             
 
         }
-
+        //Pasa la direccion del archivo a la ventana principal
         private void PictureBox_Click(object sender, EventArgs e)
         {
             ventanaPrincipal.Temporal_path = file_path;
             
         }
-
+        //Si hago doble click en una carpeta, la abre
         private void PictureBox_DoubleClick(object sender, EventArgs e)
         {
             if (Directory.Exists(file_path))
@@ -66,7 +66,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
                 ventanaPrincipal.Crear_de_Nuevo(ventanaPrincipal.Files_All);
             }
         }
-
+        //Detecta el tipo de archivo y setea un icono especifico
         private string GetImage()
         {
             string file_extension = Path.GetExtension(file_path);

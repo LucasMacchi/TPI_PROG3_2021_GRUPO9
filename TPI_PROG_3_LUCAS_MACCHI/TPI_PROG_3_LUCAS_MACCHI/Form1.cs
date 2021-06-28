@@ -43,6 +43,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            //Aca se activan y desactivan los paneles 
             DG_ARCHIVOS.Visible = false;
             panel_modificacion.Visible = false;
             panel_raw_data.Visible = false;
@@ -71,7 +72,8 @@ namespace TPI_PROG_3_LUCAS_MACCHI
         
         //*********************Inicio*************************//
         #region Creador de Archivos
-        //Este metodo consigue todos los archivos dentro de una carpeta y los pone en un array de strings, ademas crear la clase para guardar la sesion
+        //Este metodo consigue todos los archivos dentro de una carpeta y los pone
+        //en un array de strings, ademas crear la clase para guardar la sesion
         public void GetFile()
         {
             if (General_Path != "")
@@ -90,7 +92,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
 
 
         }
-
+        //Esto actualiza en tiempo real los datos del codigo
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (General_Path != "")
@@ -120,7 +122,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
         {
 
         }
-
+        //Este saca el peso de los archivos
         private string File_Length(string path)
         {
             long size;
@@ -134,33 +136,13 @@ namespace TPI_PROG_3_LUCAS_MACCHI
             }
             catch (FileNotFoundException)
             {
-
                 size = 0;
                 return final_size;
 
             }
         }
 
-        private void Delete_arc_Click(object sender, EventArgs e)
-        {
-            DialogResult dialogResult = MessageBox.Show("¿Seguro que quieres eliminar el archivo?", "", MessageBoxButtons.YesNo);
-            if (dialogResult == DialogResult.Yes)
-            {
-                try
-                {
-                    File.Delete(current_Description_Path);
-                }
-                catch (Exception)
-                {
 
-                    Directory.Delete(current_Description_Path);
-                }
-
-
-            }
-
-
-        }
         #endregion
         //**********************Fin**********************//
 
@@ -168,6 +150,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
 
         //*********************Inicio*************************//
         #region FlowPanel
+        //Aca creo los iconos del flowpanel
         private void CrearIcono(string[] files)
         {
             if (General_Path != "")
@@ -206,6 +189,8 @@ namespace TPI_PROG_3_LUCAS_MACCHI
 
         //*********************Inicio*************************//
         #region Menustrip for panels
+        //Toda esta parte se encarga de ocultar y mostrar paneles dependiendo de la opcion
+        //elegida
         private void rawDataToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Show_RawData();
@@ -261,6 +246,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
 
         //*********************Inicio*************************//
         #region otros
+        //Estos dos botones se encargan de ocultar y mostrar o el flowpanel o la tabla
         private void Grid_view_button_Click(object sender, EventArgs e)
         {
             DG_ARCHIVOS.Visible = true;
@@ -291,6 +277,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
 
         //*********************Inicio*************************//
         #region Administrador del GridData
+        //Esto se encarga de crear la tabla de archivos
         private void DataGrid_Manager(string[] files_paths)
         {
             if(General_Path != "")
@@ -321,12 +308,20 @@ namespace TPI_PROG_3_LUCAS_MACCHI
 
             }
         }
+        private void DG_ARCHIVOS_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = e.RowIndex;
+            if (i != -1)
+            {
+                temporal_path = DG_ARCHIVOS.Rows[i].Cells[6].Value.ToString();
+            }
+        }
+        //Settea el archivo seleccionado
         private void DG_ARCHIVOS_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int i = e.RowIndex;
             if (i != -1)
             {
-                
                 temporal_path = DG_ARCHIVOS.Rows[i].Cells[6].Value.ToString();
                 Process.Start(temporal_path);
             }
@@ -338,7 +333,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
 
         //*********************Inicio*************************//
         #region Creador de descripcion
-
+        //Abre el archivo
         private void Open_archivo_Click(object sender, EventArgs e)
         {
             try
@@ -350,16 +345,27 @@ namespace TPI_PROG_3_LUCAS_MACCHI
             }
 
         }
-
-        private void DG_ARCHIVOS_CellClick(object sender, DataGridViewCellEventArgs e)
+        //Elimina el archivo
+        private void Delete_arc_Click(object sender, EventArgs e)
         {
-            int i = e.RowIndex;
-            if (i != -1)
+            DialogResult dialogResult = MessageBox.Show("¿Seguro que quieres eliminar el archivo?", "", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
             {
-                temporal_path = DG_ARCHIVOS.Rows[i].Cells[6].Value.ToString();
-            }
-        }
+                try
+                {
+                    File.Delete(current_Description_Path);
+                }
+                catch (Exception)
+                {
 
+                    Directory.Delete(current_Description_Path);
+                }
+
+
+            }
+
+
+        }
         private void MiMetodo_SetDescriptionOfFile()
         {
 
@@ -509,7 +515,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
                         string nombre = info.Name;
                         explorer_path = FBD_CHANGE.SelectedPath;
                         explorer_path += "\\" + nombre;
-                        label13.Text = explorer_path;
+                        
                         //Aca iria el cambio de direccion
                         Directory.Move(temporal_path, explorer_path);
                         temporal_path =  explorer_path;
@@ -520,7 +526,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
                         string nombre = info.Name;
                         explorer_path = FBD_CHANGE.SelectedPath;
                         explorer_path += "\\"+ nombre;
-                        label13.Text = explorer_path;
+                        
                         //Aca iria el cambio de direccion
                         File.Move(temporal_path, explorer_path);
                         temporal_path = explorer_path;
@@ -546,19 +552,21 @@ namespace TPI_PROG_3_LUCAS_MACCHI
         {
 
         }
-
+        //Este boton me abre una ventana nueva
+        //donde te deja cambiar el nombre 
         private void button2_Click(object sender, EventArgs e)
         {
             Change_name change_Name = new Change_name(this);
             change_Name.ShowDialog();
         }
-
+        //Este boton me abre una ventana nueva
+        //donde me deja crear una carpeta
         private void New_folder_but_Click(object sender, EventArgs e)
         {
             New_Folder new_Folder = new New_Folder();
             new_Folder.ShowDialog();
         }
-
+        //Este me deja cambiar la direccion del archivo
         private void Select_general_address_Click(object sender, EventArgs e)
         {
             if(FBD_GENERAL.ShowDialog() == DialogResult.OK)
@@ -566,7 +574,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
                 General_Path = FBD_GENERAL.SelectedPath;
             }
         }
-
+        //Aca setteo la descripcion
         private void SET_DESCRIPTION()
         {
             try
@@ -580,12 +588,12 @@ namespace TPI_PROG_3_LUCAS_MACCHI
             }
             
         }
-
+        //Aca guardo la descripcion
         private void Save_des_Click(object sender, EventArgs e)
         {
             contenedor.Descripciones.Add(TB_NOMBRE_MOD.Text, TB_DESCRIPCION_MOD.Text);
             TB_DESCRIPCION_MOD.Text = "";
-            MessageBox.Show("Descripcion Guardada");
+            MessageBox.Show("Datos Guardados");
         }
 
         #endregion
@@ -595,6 +603,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
 
         //*********************Inicio*************************//
         #region Abrir y guardar descripciones
+        //Me deja abrir un archivo
         private void Select_archive_des_Click(object sender, EventArgs e)
         {
             if(OFD_DESCRIPCIONES.ShowDialog() == DialogResult.OK)
@@ -602,7 +611,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
                 Abrir_Objeto(OFD_DESCRIPCIONES.FileName);
             }
         }
-
+        //Boton para guardar el archivo
         private void Save_archive_des_Click(object sender, EventArgs e)
         {
             if(SFD_DESCRIPCIONES.ShowDialog() == DialogResult.OK)
@@ -610,6 +619,8 @@ namespace TPI_PROG_3_LUCAS_MACCHI
                 Guardar_archivo(contenedor, SFD_DESCRIPCIONES.FileName);
             }
         }
+        //Aca se serializa el objeto contenedor (donde se guardan las descripciones)
+        //y se guarda en un archivo
         private void Guardar_archivo(Contenedor mi_objeto, string filename)
         {
             FileStream save_path = new FileStream(filename, FileMode.Create);
@@ -617,7 +628,8 @@ namespace TPI_PROG_3_LUCAS_MACCHI
             b.Serialize(save_path, mi_objeto);
             save_path.Close();
         }
-
+        //Aca uso el archivo y remplazo el objeto contenedor con el objeto guardado
+        //haciendo que este tome todos los valores
         private void Abrir_Objeto(string filename)
         {
             FileStream f = new FileStream(filename, FileMode.Open);
@@ -632,6 +644,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
 
         //*********************Inicio*************************//
         #region Info de ultima sesion
+        //Cuando se esta cerrando la app, se guarda la sesion
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             if(general_Path != "" || general_Path != null)
@@ -640,6 +653,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
             }
             
         }
+        //Este serializa en un archivo XML el objeto "lastsession"
         private void Guardar_last_xml(LastSession objeto)
         {
             using (FileStream f = new FileStream("last_session.xml", FileMode.Create))
@@ -648,6 +662,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
                 xml.Serialize(f, objeto);
             }
         }
+        //Este lo deserealiza
         private LastSession Abrir_last_xml()
         {
             using (FileStream f = new FileStream("last_session.xml", FileMode.Open))
@@ -655,6 +670,11 @@ namespace TPI_PROG_3_LUCAS_MACCHI
                 XmlSerializer xml = new XmlSerializer(typeof(LastSession));
                 return (LastSession)xml.Deserialize(f);
             }
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
+        {
 
         }
         #endregion

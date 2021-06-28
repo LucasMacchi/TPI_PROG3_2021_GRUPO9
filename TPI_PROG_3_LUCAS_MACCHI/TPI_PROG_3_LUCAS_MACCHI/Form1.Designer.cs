@@ -62,6 +62,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
             this.MS_DES_RAW = new System.Windows.Forms.ToolStripMenuItem();
             this.MS_MOD_RAW = new System.Windows.Forms.ToolStripMenuItem();
             this.panel_modificacion = new System.Windows.Forms.Panel();
+            this.Save_des = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.CHANGE_ADDRESS = new System.Windows.Forms.Button();
             this.TB_DESCRIPCION_MOD = new System.Windows.Forms.TextBox();
@@ -87,17 +88,16 @@ namespace TPI_PROG_3_LUCAS_MACCHI
             this.FBD_CHANGE = new System.Windows.Forms.FolderBrowserDialog();
             this.New_folder_but = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Save_archive_des = new System.Windows.Forms.Button();
+            this.label16 = new System.Windows.Forms.Label();
+            this.Select_archive_des = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.Select_general_address = new System.Windows.Forms.Button();
             this.lbl_current_address = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.FBD_GENERAL = new System.Windows.Forms.FolderBrowserDialog();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.Select_archive_des = new System.Windows.Forms.Button();
             this.OFD_DESCRIPCIONES = new System.Windows.Forms.OpenFileDialog();
-            this.Save_des = new System.Windows.Forms.Button();
-            this.label16 = new System.Windows.Forms.Label();
-            this.Save_archive_des = new System.Windows.Forms.Button();
             this.SFD_DESCRIPCIONES = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             this.panel_descripcion.SuspendLayout();
@@ -432,6 +432,16 @@ namespace TPI_PROG_3_LUCAS_MACCHI
             this.panel_modificacion.TabIndex = 2;
             this.panel_modificacion.Paint += new System.Windows.Forms.PaintEventHandler(this.panel_modificacion_Paint);
             // 
+            // Save_des
+            // 
+            this.Save_des.Location = new System.Drawing.Point(414, 248);
+            this.Save_des.Name = "Save_des";
+            this.Save_des.Size = new System.Drawing.Size(116, 39);
+            this.Save_des.TabIndex = 20;
+            this.Save_des.Text = "Guardar";
+            this.Save_des.UseVisualStyleBackColor = true;
+            this.Save_des.Click += new System.EventHandler(this.Save_des_Click);
+            // 
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(359, 87);
@@ -652,6 +662,56 @@ namespace TPI_PROG_3_LUCAS_MACCHI
             this.panel1.Size = new System.Drawing.Size(452, 340);
             this.panel1.TabIndex = 22;
             // 
+            // Save_archive_des
+            // 
+            this.Save_archive_des.Location = new System.Drawing.Point(245, 244);
+            this.Save_archive_des.Name = "Save_archive_des";
+            this.Save_archive_des.Size = new System.Drawing.Size(110, 23);
+            this.Save_archive_des.TabIndex = 24;
+            this.Save_archive_des.Text = "Guardar";
+            this.Save_archive_des.UseVisualStyleBackColor = true;
+            this.Save_archive_des.Click += new System.EventHandler(this.Save_archive_des_Click);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(4, 241);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(167, 24);
+            this.label16.TabIndex = 23;
+            this.label16.Text = "Guardar archivo:";
+            // 
+            // Select_archive_des
+            // 
+            this.Select_archive_des.Location = new System.Drawing.Point(245, 202);
+            this.Select_archive_des.Name = "Select_archive_des";
+            this.Select_archive_des.Size = new System.Drawing.Size(110, 23);
+            this.Select_archive_des.TabIndex = 22;
+            this.Select_archive_des.Text = "Seleccionar";
+            this.Select_archive_des.UseVisualStyleBackColor = true;
+            this.Select_archive_des.Click += new System.EventHandler(this.Select_archive_des_Click);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(4, 167);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(150, 24);
+            this.label15.TabIndex = 21;
+            this.label15.Text = "Descripciones:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(4, 199);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(202, 24);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Seleccionar archivo:";
+            // 
             // Select_general_address
             // 
             this.Select_general_address.Location = new System.Drawing.Point(245, 40);
@@ -681,66 +741,7 @@ namespace TPI_PROG_3_LUCAS_MACCHI
             this.label13.Size = new System.Drawing.Size(235, 24);
             this.label13.TabIndex = 2;
             this.label13.Text = "Direccion seleccionada:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(4, 199);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(202, 24);
-            this.label14.TabIndex = 20;
-            this.label14.Text = "Seleccionar archivo:";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(4, 167);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(150, 24);
-            this.label15.TabIndex = 21;
-            this.label15.Text = "Descripciones:";
-            // 
-            // Select_archive_des
-            // 
-            this.Select_archive_des.Location = new System.Drawing.Point(245, 202);
-            this.Select_archive_des.Name = "Select_archive_des";
-            this.Select_archive_des.Size = new System.Drawing.Size(110, 23);
-            this.Select_archive_des.TabIndex = 22;
-            this.Select_archive_des.Text = "Seleccionar";
-            this.Select_archive_des.UseVisualStyleBackColor = true;
-            this.Select_archive_des.Click += new System.EventHandler(this.Select_archive_des_Click);
-            // 
-            // Save_des
-            // 
-            this.Save_des.Location = new System.Drawing.Point(414, 248);
-            this.Save_des.Name = "Save_des";
-            this.Save_des.Size = new System.Drawing.Size(116, 39);
-            this.Save_des.TabIndex = 20;
-            this.Save_des.Text = "Guardar";
-            this.Save_des.UseVisualStyleBackColor = true;
-            this.Save_des.Click += new System.EventHandler(this.Save_des_Click);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(4, 241);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(167, 24);
-            this.label16.TabIndex = 23;
-            this.label16.Text = "Guardar archivo:";
-            // 
-            // Save_archive_des
-            // 
-            this.Save_archive_des.Location = new System.Drawing.Point(245, 244);
-            this.Save_archive_des.Name = "Save_archive_des";
-            this.Save_archive_des.Size = new System.Drawing.Size(110, 23);
-            this.Save_archive_des.TabIndex = 24;
-            this.Save_archive_des.Text = "Guardar";
-            this.Save_archive_des.UseVisualStyleBackColor = true;
-            this.Save_archive_des.Click += new System.EventHandler(this.Save_archive_des_Click);
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // Form1
             // 
