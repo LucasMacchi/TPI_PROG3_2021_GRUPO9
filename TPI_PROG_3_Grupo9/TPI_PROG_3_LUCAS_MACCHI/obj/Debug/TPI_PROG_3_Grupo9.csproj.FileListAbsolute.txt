@@ -1,0 +1,12 @@
+C:\Users\lucas\Desktop\Codigos\TPI_PROG_3_LUCAS_MACCHI\TPI_PROG_3_LUCAS_MACCHI\bin\Debug\TPI_PROG_3_LUCAS_MACCHI.exe.config
+C:\Users\lucas\Desktop\Codigos\TPI_PROG_3_LUCAS_MACCHI\TPI_PROG_3_LUCAS_MACCHI\bin\Debug\TPI_PROG_3_LUCAS_MACCHI.exe
+C:\Users\lucas\Desktop\Codigos\TPI_PROG_3_LUCAS_MACCHI\TPI_PROG_3_LUCAS_MACCHI\bin\Debug\TPI_PROG_3_LUCAS_MACCHI.pdb
+C:\Users\lucas\Desktop\Codigos\TPI_PROG_3_LUCAS_MACCHI\TPI_PROG_3_LUCAS_MACCHI\obj\Debug\TPI_PROG_3_Grupo9.csprojAssemblyReference.cache
+C:\Users\lucas\Desktop\Codigos\TPI_PROG_3_LUCAS_MACCHI\TPI_PROG_3_LUCAS_MACCHI\obj\Debug\TPI_PROG_3_Grupo9.Change_name.resources
+C:\Users\lucas\Desktop\Codigos\TPI_PROG_3_LUCAS_MACCHI\TPI_PROG_3_LUCAS_MACCHI\obj\Debug\TPI_PROG_3_Grupo9.Form1.resources
+C:\Users\lucas\Desktop\Codigos\TPI_PROG_3_LUCAS_MACCHI\TPI_PROG_3_LUCAS_MACCHI\obj\Debug\TPI_PROG_3_Grupo9.New_Folder.resources
+C:\Users\lucas\Desktop\Codigos\TPI_PROG_3_LUCAS_MACCHI\TPI_PROG_3_LUCAS_MACCHI\obj\Debug\TPI_PROG_3_LUCAS_MACCHI.Properties.Resources.resources
+C:\Users\lucas\Desktop\Codigos\TPI_PROG_3_LUCAS_MACCHI\TPI_PROG_3_LUCAS_MACCHI\obj\Debug\TPI_PROG_3_Grupo9.csproj.GenerateResource.cache
+C:\Users\lucas\Desktop\Codigos\TPI_PROG_3_LUCAS_MACCHI\TPI_PROG_3_LUCAS_MACCHI\obj\Debug\TPI_PROG_3_Grupo9.csproj.CoreCompileInputs.cache
+C:\Users\lucas\Desktop\Codigos\TPI_PROG_3_LUCAS_MACCHI\TPI_PROG_3_LUCAS_MACCHI\obj\Debug\TPI_PROG_3_LUCAS_MACCHI.exe
+C:\Users\lucas\Desktop\Codigos\TPI_PROG_3_LUCAS_MACCHI\TPI_PROG_3_LUCAS_MACCHI\obj\Debug\TPI_PROG_3_LUCAS_MACCHI.pdb
